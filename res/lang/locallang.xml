@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+    <meta type="array">
+        <description></description>
+        <type></type>
+        <csh_table></csh_table>
+        <labelContext type="array">
+        </labelContext>
+    </meta>
+    <data type="array">
+      <!-- ENGLISH LANGUAGE DATA -->
+      <languageKey index="default" type="array">
+        <label index="mod.category_title_short">Blog</label>
+        <label index="mod.category_title">Blog comments</label>
+  
+  			<label index="mod.blogCommentCategory.title">blog comment forum</label>
+  			<label index="mod.blogCommentCategory.desc">The forum to be used for t3blog comments.</label>
+  			<label index="mod.blogTopicAuthor.title">Topic author</label>
+  			<label index="mod.blogTopicAuthor.desc">This user will be used as author for new comment topics.</label>
+  			<label index="mod.previewAmount.title">Preview amount</label>
+  			<label index="mod.previewAmount.desc">The number of latest comments that will be displayed below the blog single view.</label>
+      </languageKey>
+  		<!-- GERMAN LANGUAGE DATA -->
+      <languageKey index="de" type="array">
+        <label index="mod.category_title_short">Blog</label>
+        <label index="mod.category_title">Blog-Kommentare</label>
+  
+  			<label index="mod.blogCommentCategory.title">Forum für Blog-Kommentare</label>
+  			<label index="mod.blogCommentCategory.desc">Dieses Forum wird für t3blog-Kommentare verwendet.</label>
+  			<label index="mod.blogTopicAuthor.title">Themen-Verfasser</label>
+  			<label index="mod.blogTopicAuthor.desc">Dieser Benutzer wird als Verfasser für neue Kommentar-Themen verwendet.</label>
+  			<label index="mod.previewAmount.title">Vorschauanzahl</label>
+  			<label index="mod.previewAmount.desc">Die Anzahl der neuesten Kommentare, die unter der Blog-Einzelansicht angezeigt werden.</label>
+      </languageKey>
+    </data>
+</T3locallang>

@@ -1,0 +1,94 @@
+plugin.tx_mmforumcomments_pi1 {
+  parameters {
+    tx_t3blog_pi1 {
+      uidParent = blogList
+      uid = showUid
+      recordsTable = tx_t3blog_post
+      postdate = crdate
+      pageCommentCategory = {$plugin.tx_mmforum.mmforumblog_blogCommentCategory}
+      pageTopicAuthor = {$plugin.tx_mmforum.mmforumblog_blogTopicAuthor}
+      subject = COA
+  		subject {
+  			10 = TEXT
+  			10.value = [Blog]&nbsp;
+  			20 = TEXT
+  			20.field = title 
+    		20.htmlSpecialChars = 1
+  		}
+      posttext = COA
+      posttext {
+      	10 = TEXT
+      	10.field = textBeforeDivider
+      }
+      linktopage = COA
+      linktopage {
+      	10 = TEXT
+      	10.value (
+      	
+      	
+        [b]Read the whole blog article:[/b]
+        
+        )
+        11 = TEXT
+        11.value = -->&nbsp;
+        20 = COA
+    		20 {
+    			1 = LOAD_REGISTER
+    			1 {
+    				year {
+    					field = date
+    					strftime = %Y
+    				}
+    				month {
+    					field = date
+    					strftime = %m
+    				}
+    				day {
+    					field = date
+    					strftime = %d
+    				}
+    			}
+    
+    			10 = TEXT
+    			10 {
+    				field = title
+    				htmlSpecialChars = 1
+    				typolink {
+              # id of the bloglist
+              parameter.field = blogPid
+    					useCacheHash = 1
+    					additionalParams.dataWrap = &tx_t3blog_pi1[blogList][showUid]={field:uid}&tx_t3blog_pi1[blogList][year]={register:year}&tx_t3blog_pi1[blogList][month]={register:month}&tx_t3blog_pi1[blogList][day]={register:day}
+    				}
+    			}
+    
+    			99 = RESTORE_REGISTER
+    		}
+      }
+    }
+  }
+}
+
+#Changes for blog2page template
+#page.10 copied from plugin.tx_t3blog_pi1.myblog 
+#plugin.tx_t3blog_pi1.myblog.widget copied from widgets of plugin.tx_t3blog_pi1
+page.10.widget.blogList {
+  single.50 >
+  single.60 >
+  addcommentlink >
+  commentForm >
+  commentList >
+  commentsLink >
+  comment >
+  commentList < plugin.tx_mmforumcomments_pi1
+}
+#Changes for functionalities template
+plugin.tx_t3blog_pi2.blogList {
+  single.50 >
+  single.60 >
+  addcommentlink >
+  commentForm >
+  commentList >
+  commentsLink >
+  comment >
+  commentList < plugin.tx_mmforumcomments_pi1
+}
