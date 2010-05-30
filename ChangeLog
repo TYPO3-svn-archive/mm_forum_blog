@@ -1,3 +1,11 @@
+2010-05-30 Hauke Hain  <hhpreuss@googlemail.com>
+
+	* Added possibility to use the t3blog commenting interface. By default 
+	  mm_forum_blog creates a mm_forum topic if the first comments is written.
+	  If comments are immediately approved a post is created.
+	  
+	  Attention: The BE module "Comments" of t3blog is not supported at all!
+	
 2010-05-24 Hauke Hain  <hhpreuss@googlemail.com>
 
 	* first working version: replaces the t3blog commenting widget with mm_forum_comments	

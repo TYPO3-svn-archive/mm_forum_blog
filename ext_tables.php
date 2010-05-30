@@ -8,5 +8,6 @@ if (!defined ('TYPO3_MODE')) {
 	 */
 
 t3lib_extMgm::addStaticFile($_EXTKEY, 'res/ts/static', 'mm_forum_blog (comments)');
+t3lib_extMgm::addStaticFile($_EXTKEY, 'res/ts/staticReplace', 'mm_forum_blog (REPLACE comments)');
 
 ?>

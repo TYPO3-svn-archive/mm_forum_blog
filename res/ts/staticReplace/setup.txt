@@ -1,0 +1,25 @@
+#Changes for blog2page template
+#page.10 copied from plugin.tx_t3blog_pi1.myblog 
+#plugin.tx_t3blog_pi1.myblog.widget copied from widgets of plugin.tx_t3blog_pi1
+
+page.10.widget.blogList {
+  single.50 >
+  single.60 >
+  addcommentlink >
+  commentForm >
+  commentList >
+  commentsLink >
+  comment >
+  commentList < plugin.tx_mmforumcomments_pi1
+}
+#Changes for functionalities template
+plugin.tx_t3blog_pi2.blogList {
+  single.50 >
+  single.60 >
+  addcommentlink >
+  commentForm >
+  commentList >
+  commentsLink >
+  comment >
+  commentList < plugin.tx_mmforumcomments_pi1
+}
