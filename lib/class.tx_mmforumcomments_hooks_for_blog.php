@@ -34,13 +34,22 @@ class tx_mmforumcomments_hooks_for_blog {
  * @return	null		manipulates the original data because of parameters by reference
  */
   function getTypoScriptDataHook(&$parameter, &$pObj) {
+    if(intval($parameter['data']['uid'])==0) {
+      return;
+    }
+
+    if($pObj==false) {
+      $where = '';
+    } else {
+      $where = $pObj->cObj->enableFields('tt_content');
+    }
+
     // get all content elemenets
   	$resContent = $GLOBALS['TYPO3_DB']->exec_SELECTquery(
   				'uid, bodytext',		// SELECT ...
   				'tt_content',		// FROM ...
-  				'irre_parentid = ' . $parameter['data']['uid'] .
-  					' AND irre_parenttable=\'tx_t3blog_post\' ' .
-  					($pObj==false) ? '' : $pObj->cObj->enableFields('tt_content'),
+  				'irre_parentid = ' . intval($parameter['data']['uid']) .
+  					' AND irre_parenttable=\'tx_t3blog_post\' ' . $where,
   				'uid',		// GROUP BY ...
   				'sorting'		// ORDER BY ...
   	);
