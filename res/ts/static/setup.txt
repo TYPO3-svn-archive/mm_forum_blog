@@ -5,7 +5,7 @@ plugin.tx_mmforumcomments_pi1 {
       uidParent = blogList
       uid = showUid
       recordsTable = tx_t3blog_post
-      postdate = crdate
+      postdate = date
       pageCommentCategory = {$plugin.tx_mmforum.mmforumblog_blogCommentCategory}
       pageTopicAuthor = {$plugin.tx_mmforum.mmforumblog_blogTopicAuthor}
       subject = COA
